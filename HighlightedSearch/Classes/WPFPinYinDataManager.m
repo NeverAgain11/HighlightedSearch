@@ -32,6 +32,10 @@
     return [WPFPinYinDataManager _shareInstance].dataSource;
 }
 
++ (void)clearDataSource {
+    [[WPFPinYinDataManager _shareInstance].dataSource removeAllObjects];
+}
+
 #pragma mark Private Method
 + (WPFPinYinDataManager *)_shareInstance {
     static dispatch_once_t onceToken;

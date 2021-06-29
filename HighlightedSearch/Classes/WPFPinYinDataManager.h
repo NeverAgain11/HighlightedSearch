@@ -13,6 +13,8 @@
 /** 添加解析的单个数据源,id标识符是为了防止重名 */
 + (void)addInitializeString:(NSString *)string identifer:(NSString *)identifier;
 
++ (void)clearDataSource;
+
 /** 获取已解析的数据源 */
 + (NSArray *)getInitializedDataSource;
 
