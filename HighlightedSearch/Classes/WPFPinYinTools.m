@@ -110,12 +110,14 @@
     NSArray *completeSpellingArray = [pinyinLocationString componentsSeparatedByString:@","];
     NSArray *pinyinFirstLetterLocationArray = [initialLocationString componentsSeparatedByString:@","];
     
+    NSString *searchString = searchStrLower.uppercaseString;
+    
     // 完全中文匹配范围
-    NSRange chineseRange = [nameStrLower rangeOfString:searchStrLower];
+    NSRange chineseRange = [nameStrLower.uppercaseString rangeOfString:searchString];
     // 拼音全拼匹配范围
-    NSRange complateRange = [completeSpelling rangeOfString:searchStrLower];
+    NSRange complateRange = [completeSpelling.uppercaseString rangeOfString:searchString];
     // 拼音首字母匹配范围
-    NSRange initialRange = [initialString rangeOfString:searchStrLower];
+    NSRange initialRange = [initialString.uppercaseString rangeOfString:searchString];
     
     // 汉字直接匹配
     if (chineseRange.length!=0) {
